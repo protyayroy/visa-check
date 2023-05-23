@@ -1,49 +1,80 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ApplyController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+//-------------       VIEW LOGIN PAGE AND GET LOGIN REQUEST FOR ADMIN
+Route::match(['get', 'post'], 'admin', [AdminController::class, 'login'])->name('admin.login');
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::prefix('admin')->group(function () {
 
-Route::get('/Admin/Login', function () {
-    return view('auth.login');
+
+    Route::middleware('auth')->group(function () {
+
+        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+
+        Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
+
+        // VIEW PROFILE
+        Route::view('profile', 'admin.profile.view_profile')->name('profile');
+
+        // UPDATE ADMIN PROFILE IMAGE
+        Route::post('upload-image', [AdminController::class, 'uploadImage'])->name('profile.image.update');
+
+        // VIEW UPDATE PROFILE PAGE
+        Route::view('update-profile', 'admin.profile.update_profile')->name('profile.edit');
+
+        // UPDATE ADMIN PROFILE
+        Route::post('update-own-profile', [AdminController::class, 'updateProfile'])->name('profile.update');
+
+        // UPDATE ADMIN PROFILE
+        Route::post('change-password', [AdminController::class, 'changePassword'])->name('profile.password.update');
+
+
+        Route::get('/visa-application', [AdminController::class, 'application'])->name('application');
+
+        Route::get('/visa-approve-list', [AdminController::class, 'approveList'])->name('approve.list');
+
+        Route::view('add-approval', 'admin.application.add_approval')->name('create.approval');
+
+        Route::post('add-approval', [AdminController::class, 'storeApproval'])->name('store.approval');
+    });
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-require __DIR__.'/auth.php';
 
 
 
+Route::get('/', function () {
+    return view('front_end.index');
+})->name('index');
+Route::get('Apply', function () {
+    return view('front_end.apply');
+})->name('apply');
+Route::get('Check-Information', function () {
+    return view('front_end.check');
+})->name('check_info');
+Route::get('About', function () {
+    return view('front_end.about');
+})->name('about');
+Route::get('Government-Information', function () {
+    return view('front_end.government');
+})->name('gov_info');
+Route::get('Visa-Passport', function () {
+    return view('front_end.visapassports');
+})->name('visa_passport');
+Route::get('Education', function () {
+    return view('front_end.education');
+})->name('education');
+Route::get('Media', function () {
+    return view('front_end.media');
+})->name('media');
+Route::get('Contact', function () {
+    return view('front_end.contact');
+})->name('contact');
+Route::get('Invest-Namibia', function () {
+    return view('front_end.investinnamibia');
+})->name('invest');
 
-Route::get('/', function () { return view('front_end.index'); })->name('index');
-Route::get('/Apply', function () { return view('front_end.apply'); })->name('apply');
-Route::get('/Check-Information', function () { return view('front_end.check'); })->name('check_info');
-Route::get('/About', function () { return view('front_end.about'); })->name('about');
-Route::get('/Government-Information', function () { return view('front_end.government'); })->name('gov_info');
-Route::get('/Visa-Passport', function () { return view('front_end.visapassports'); })->name('visa_passport');
-Route::get('/Education', function () { return view('front_end.education'); })->name('education');
-Route::get('/Media', function () { return view('front_end.media'); })->name('media');
-Route::get('/Contact', function () { return view('front_end.contact'); })->name('contact');
-Route::get('/Invest-Namibia', function () { return view('front_end.investinnamibia'); })->name('invest');
+Route::post('visa-apply', [ApplyController::class, 'create'])->name('apply.create');
+Route::get('check-visa', [ApplyController::class, 'check'])->name('check.visa');

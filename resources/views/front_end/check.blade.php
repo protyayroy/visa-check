@@ -2,8 +2,25 @@
 
 @section('content')
     <!-- ! Check Info Form Starts -->
-
-    <form class="w-full flex flex-col justify-center items-center px-5 md:px-0">
+    @if (Session::has('success_message'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success:</strong> {{ Session('success_message') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+    @if (Session::has('error_message'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Error:</strong> {{ Session('error_message') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+    <form class="w-full flex flex-col justify-center items-center px-5 md:px-0" action="{{ route('check.visa') }}"
+        method="GET">
+        @csrf
         <div class="w-full md:w-[640px] lg:w-[768px] xl:w-[1024px] 2xl:w-[1280px]">
             <div class="w-full my-10">
                 <h2 class="text-center text-2xl font-bold tracking-wide underline underline-offset-8">
@@ -15,7 +32,7 @@
                     <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                         Name
                     </label>
-                    <input type="text" id="name"
+                    <input type="text" id="name" name="name"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Enter Your Name" required />
                 </div>
@@ -23,7 +40,7 @@
                     <label for="date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                         Date Of Birth
                     </label>
-                    <input type="date" id="date"
+                    <input type="date" id="date" name="date"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required />
                 </div>
@@ -31,7 +48,7 @@
                     <label for="passport_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                         Passport Number
                     </label>
-                    <input type="number" id="passport_number"
+                    <input type="number" id="passport_number" name="passport_number"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Enter Passport Number" required />
                 </div>
@@ -39,7 +56,7 @@
                     <label for="nationality" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                         Nationality
                     </label>
-                    <input type="text" id="nationality"
+                    <input type="text" id="nationality" name="nationality"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Enter Your Nationality" required />
                 </div>
@@ -47,7 +64,7 @@
                     <label for="confirmation_number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                         Confirmation Number
                     </label>
-                    <input type="number" id="confirmation_number"
+                    <input type="number" id="confirmation_number" name="confirmation_number"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Enter Confirmation Number" required />
                 </div>
