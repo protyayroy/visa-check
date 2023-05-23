@@ -8,19 +8,18 @@
         </li>
         <li class="nav-item {{ $active == 'application' ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('application') }}">
-                <i class="fa-solid fa-house"></i>
-                <span class="menu-title">Visa Application</span>
+                <i class="fa-brands fa-cc-visa"></i> &nbsp;&nbsp; <span class="menu-title">Visa Application</span>
             </a>
         </li>
         <li class="nav-item {{ $active == 'approve_list' ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('approve.list') }}">
-                <i class="fa-solid fa-house"></i>
+                <i class="fa-solid fa-list"></i>
                 <span class="menu-title">Visa Approved List</span>
             </a>
         </li>
         <li class="nav-item {{ $active == 'add_approval' ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('create.approval') }}">
-                <i class="fa-solid fa-house"></i>
+                <i class="fa-solid fa-square-check"></i>
                 <span class="menu-title">Add Approval</span>
             </a>
         </li>

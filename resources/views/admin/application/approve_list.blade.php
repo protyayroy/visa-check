@@ -9,7 +9,7 @@
 @section('content')
     <div class="card">
         <div class="card-header main_header mt-3">
-            <h4 class="text-center mb-0"><i class="fa-solid fa-user"></i> Visa Approve List
+            <h4 class="text-center mb-0"><i class="fa-solid fa-list"></i> Visa Approve List
             </h4>
         </div>
         <div class="card-body body-content">

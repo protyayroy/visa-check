@@ -9,7 +9,7 @@
 @section('content')
     <div class="card">
         <div class="card-header main_header mt-3">
-            <h4 class="text-center mb-0"><i class="fa-solid fa-user"></i> Visa Application
+            <h4 class="text-center mb-0"><i class="fa-brands fa-cc-visa"></i> Visa Application
             </h4>
         </div>
         <div class="card-body body-content">
@@ -22,9 +22,10 @@
                         </button>
                     </div>
                 @endif
-                <table id="bootstrap_datatable" class="table table-bordered">
+                <table id="bootstrap_datatable" class="table table-dark table-bordered" style="width:100%">
                     <thead>
                         <tr>
+                            <th>#</th>
                             <th>Nationality</th>
                             <th>Former Nationality</th>
                             <th>Country of Residence</th>
@@ -40,6 +41,7 @@
                     <tbody>
                         @foreach ($applications as $item)
                             <tr>
+                                <td>{{$loop->index + 1}}</td>
                                 <td>{{$item->nationality}}</td>
                                 <td>{{$item->former_nationality}}</td>
                                 <td>{{$item->country_residence}}</td>
@@ -50,7 +52,7 @@
                                 <td>{{$item->email}}</td>
                                 <td>{{$item->sponsor}}</td>
                                 <td>
-                                    <a href="{{ url('documents/'.$item->document) }}" class="btn btn-info" target="_blank"><i class="fa-solid fa-file"></i></a>
+                                    <a href="{{ url('documents/'.$item->document) }}" class="text-info action_btn" target="_blank"><i class="fa-solid fa-file-pdf"></i></a>
                                 </td>
                             </tr>
                         @endforeach

@@ -43,16 +43,26 @@
 
     <script src="{{ asset('backend') }}/vendors/js/vendor.bundle.base.js"></script>
     <script src="{{ asset('backend') }}/vendors/chart.js/Chart.min.js"></script>
+    <script src="{{ asset('backend') }}/js/off-canvas.js"></script>
     <script src="{{ asset('backend') }}/js/template.js"></script>
     <script src="{{ asset('backend') }}/js/dashboard.js"></script>
     <script src="{{ asset('backend') }}/js/Chart.roundedBarCharts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('backend') }}/js/jquery-3.6.3.min.js"></script>
+    {{-- <script src="{{ asset('backend') }}/js/bootstrap.min.js"></script> --}}
     <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap4.min.js"></script>
 
-    <script src="{{ asset('backend') }}/custom.js"></script>
 
+    <script>
+        $(document).ready(function() {
+            $('#bootstrap_datatable').DataTable({
+                scrollX: true,
+            });
+        });
+
+        $(".loader").hide();
+    </script>
 
 
 </body>

@@ -9,7 +9,7 @@
 @section('content')
     <div class="card">
         <div class="card-header main_header mt-3">
-            <h4 class="text-center mb-0"><i class="fa-solid fa-user"></i> Add Visa Approve
+            <h4 class="text-center mb-0"><i class="fa-solid fa-square-check"></i> Add Visa Approve
             </h4>
         </div>
         <div class="card-body body-content">
@@ -65,7 +65,7 @@
                         <small class="text-danger">{{ $message }}*</small>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-rotate"></i> &nbsp; Add Approve</button>
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i> &nbsp; Add Approve</button>
             </form>
         </div>
     </div>
