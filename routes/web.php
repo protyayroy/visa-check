@@ -34,11 +34,18 @@ Route::prefix('admin')->group(function () {
 
         Route::get('/visa-application', [AdminController::class, 'application'])->name('application');
 
-        Route::get('/visa-approve-list', [AdminController::class, 'approveList'])->name('approve.list');
+        Route::get('visa-approve-list', [AdminController::class, 'approveList'])->name('approve.list');
 
         Route::view('add-approval', 'admin.application.add_approval')->name('create.approval');
 
-        Route::post('add-approval', [AdminController::class, 'storeApproval'])->name('store.approval');
+        Route::post('create-approval', [AdminController::class, 'storeApproval'])->name('store.approval');
+
+        Route::get('edit-approval/{id}', [AdminController::class, 'showApproval'])->name('show.approval');
+
+        Route::post('update-approval/{id}', [AdminController::class, 'editApproval'])->name('edit.approval');
+
+        Route::get('delete-approval/{visa_approve}', [AdminController::class, 'distroy'])->name('delete.approval');
+
     });
 });
 

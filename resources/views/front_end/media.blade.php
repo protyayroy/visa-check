@@ -6,22 +6,22 @@
 
     <div class="w-full flex justify-center items-center my-20">
         <div
-            class="w-full px-2 sm:px-0 sm:w-5/6 md:4/6 lg:w-3/6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            class="w-full px-2 sm:px-0 sm:w-5/6 md:4/6 lg:w-3/6 bg-white border border-gray-200 rounded-lg shadow">
             <div class="h-fit overflow-hidden flex justify-center items-center">
-                <img class="rounded-t-lg" src="images/media.jpg" alt="" />
+                <img class="rounded-t-lg" src="{{ asset('file') }}/images/namibiavisamedia.jpg" alt="Namibia Visa" />
             </div>
             <div class="p-5">
                 <h5
-                    class="w-full text-center mb-7 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-relaxed text-blue-700 font-bold tracking-normal dark:text-white">
+                    class="w-full text-center mb-7 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-relaxed text-blue-700 font-bold tracking-normal">
                     NATURAL GRANDEUR, SHEER EMPTINESS AND DAUNTINGLY WILD, NAMIBIA IS
                     THE PERFECT INTRODUCTION TO AFRICA TRAVEL
                 </h5>
                 <p
-                    class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-sm lg:text-base leading-10 tracking-wide space-y-6">
+                    class="mb-3 font-normal text-gray-700 text-sm lg:text-base leading-10 tracking-wide space-y-6">
                 <p>
                     With hospitable lodges and exceptionally good roads, Namibia
                     becomes perfect for individual exploration – by light aircraft,
-                    guided expedition or self-drive on your next adventure.{" "}
+                    guided expedition or self-drive on your next adventure.
                 </p>
                 <p>
                     From the soaring red dunes of Sossusvlei, the rich culture of

@@ -53,17 +53,15 @@
     <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap4.min.js"></script>
 
-
     <script>
         $(document).ready(function() {
             $('#bootstrap_datatable').DataTable({
                 scrollX: true,
             });
         });
-
-        $(".loader").hide();
     </script>
 
+    @yield('js')
 
 </body>
 

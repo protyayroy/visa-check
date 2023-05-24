@@ -5,25 +5,25 @@
 
     <div class="w-full flex justify-center items-center my-20">
         <div
-            class="w-full px-2 sm:px-0 sm:w-5/6 md:4/6 lg:w-3/6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            class="w-full px-2 sm:px-0 sm:w-5/6 md:4/6 lg:w-3/6 bg-white border border-gray-200 rounded-lg shadow ">
             <div class="h-[420px] overflow-hidden">
-                <img class="rounded-t-lg h-full w-full object-cover" src="{{ asset('file') }}/images/namibiagov.png" alt="namibiagov.png" />
+                <img class="rounded-t-lg h-full w-full object-cover" src="{{ asset('file') }}/images/namibiavisanamibiagov.png" alt="namibia visa" />
             </div>
             <div class="p-5">
 
-                <h5
-                    class="w-full text-center mb-7 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-relaxed text-blue-700 font-bold tracking-normal dark:text-white">
+                <h5 title="Namibia Visa"
+                    class="w-full text-center mb-7 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-relaxed text-blue-700 font-bold tracking-normal ">
                     GOVERNMENT OF NAMIBIA
                 </h5>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-sm lg:text-base leading-10 tracking-wide">
-                <p class="mb-5">The Republic of Namibia attained its independence on 21 March 1990
+                <p title="Namibia Visa" class="mb-3 font-normal text-gray-700  text-sm lg:text-base leading-10 tracking-wide">
+                <p title="Namibia Visa" class="mb-5">The Republic of Namibia attained its independence on 21 March 1990
                     and was established as a sovereign, secular, democratic and unitary
                     State. In accordance with the doctrine of separation of powers, the
                     government is divided into three organs:</p>
-                <p>The Executive</p>
-                <p>The Legislative</p>
-                <p>The Judiciary</p>
-                <p class="my-5">Each organ is responsible for a different function of the
+                <p title="Namibia Visa">The Executive</p>
+                <p title="Namibia Visa">The Legislative</p>
+                <p title="Namibia Visa">The Judiciary</p>
+                <p title="Namibia Visa" class="my-5">Each organ is responsible for a different function of the
                     government. The legislative branch is responsible for making laws
                     which are implemented by the executive and interpreted by the
                     judiciary branch.The President is the head of State and government.
@@ -42,10 +42,10 @@
                     Councils Act and Local Authorities Acts of 1992.The Judiciary in
                     terms of Article 78 of the Constitution, judicial powers are vested
                     in the Courts of Namibia, which consists of:</p>
-                <p>Supreme Court</p>
-                <p>High Court </p>
-                <p>Lower Courts</p>
-                <p>
+                <p title="Namibia Visa">Supreme Court</p>
+                <p title="Namibia Visa">High Court </p>
+                <p title="Namibia Visa">Lower Courts</p>
+                <p title="Namibia Visa">
                     The Courts are independent and subject only to the Constitution
                     and the law.
                 </p>
@@ -56,8 +56,8 @@
     <div>
         <div class="w-full flex justify-center items-center my-20">
             <div
-                class="w-full px-2 sm:px-0 sm:w-5/6 md:4/6 lg:w-3/6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <h2 class="w-full text-center my-10 text-xl font-bold">GOVERNMENT OFFICES, MINISTRIES AND AGENCIES</h2>
+                class="w-full px-2 sm:px-0 sm:w-5/6 md:4/6 lg:w-3/6 bg-white border border-gray-200 rounded-lg shadow ">
+                <h2 title="Namibia Visa" class="w-full text-center my-10 text-xl font-bold">GOVERNMENT OFFICES, MINISTRIES AND AGENCIES</h2>
                 <div class="flex flex-col px-10 leading-8">
                     <a target="_blank" class="hover:underline underline-offset-4 hover:text-blue-500"
                         href="https://www.parliament.na/">Government of Namibia </a>
@@ -140,7 +140,7 @@
         </div>
     </div>
     <div class="w-full text-center text-3xl">
-        <a class="hover:underline underline-offset-8 hover:text-blue-500" href="images/namibia-constitution-2015 (1).pdf"
+        <a title="Namibia Visa" class="hover:underline underline-offset-8 hover:text-blue-500" href="images/namibia-constitution-2015 (1).pdf"
             download> Namibia's Constitution (PDF) </a>
     </div>
     <!-- ! Government Ends -->

@@ -14,6 +14,39 @@ use Illuminate\Support\Str;
 class AdminController extends Controller
 {
 
+
+    public function distroy(Visa_approve $visa_approve)
+    {
+        $visa_approve->delete();
+        return back()->with('success_message', 'Delete successfully.');
+    }
+    public function editApproval(Request $request, $id)
+    {
+        // Visa_approve::find($id);
+        $request->validate([
+            'name' => 'required',
+            'nationality' => 'required',
+            'date_of_birth' => 'required',
+            'passport_number' => 'required',
+            'confirmation_number' =>' required',
+        ]);
+        Visa_approve::find($id)->update([
+            'name' => $request->name,
+            'nationality' => $request->nationality,
+            'date_of_birth' => $request->date_of_birth,
+            'passport_number' => $request->passport_number,
+            'confirmation_number' => $request->confirmation_number
+        ]);
+
+        return redirect('admin/visa-approve-list')->with('success_message', 'Update successfully.');
+    }
+
+    public function showApproval($id)
+    {
+        $visa_approve = Visa_approve::find($id);
+        return view('admin.application.edit_approval', compact('visa_approve'));
+    }
+
     public function storeApproval(Request $request)
     {
         $request->validate([
@@ -31,7 +64,7 @@ class AdminController extends Controller
             'passport_number' => $request->passport_number,
             'confirmation_number' => $request->confirmation_number
         ]);
-        return back()->with('success_message', 'Create successfully.');
+        return redirect('admin/visa-approve-list')->with('success_message', 'Create successfully.');
 
     }
 

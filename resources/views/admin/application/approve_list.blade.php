@@ -22,24 +22,38 @@
                         </button>
                     </div>
                 @endif
-                <table id="bootstrap_datatable" class="table table-bordered w-100">
+                <table id="bootstrap_datatable" class="table table-dark table-bordered" style="width:100%">
                     <thead>
                         <tr>
+                            <th>#</th>
                             <th>Name</th>
                             <th>Date Of Birth</th>
                             <th>Passport Number</th>
                             <th>Confirmation Number</th>
                             <th>Nationality</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($approvels as $item)
                             <tr>
-                                <td>{{$item->name}}</td>
-                                <td>{{$item->date_of_birth}}</td>
-                                <td>{{$item->passport_number}}</td>
-                                <td>{{$item->confirmation_number}}</td>
-                                <td>{{$item->nationality}}</td>
+                                <td>{{ $loop->index + 1 }}</td>
+                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->date_of_birth }}</td>
+                                <td>{{ $item->passport_number }}</td>
+                                <td>{{ $item->confirmation_number }}</td>
+                                <td>{{ $item->nationality }}</td>
+                                <td>
+                                    <a href="{{ route('show.approval', $item->id) }}" class="action_btn text-info"
+                                        title="Edit Approval">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+
+                                    </a>
+                                    <a href="javascript:" class="text-danger action_btn delete_item" title="Delete Approval"
+                                        item_id={{ $item->id }}>
+                                        <i class="fa-solid fa-trash"></i>
+                                    </a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -47,4 +61,19 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('js')
+    <script>
+        $('.delete_item').click(function(e) {
+            e.preventDefault();
+            if (confirm("Do you want to delete this?")) {
+
+                var id = $(this).attr('item_id');
+                var deleteApprovalRoute = "{{ route('delete.approval', ['visa_approve' => ':id']) }}";
+                deleteApprovalRoute = deleteApprovalRoute.replace(':id', id);
+                window.location.href = deleteApprovalRoute;
+            }
+        });
+    </script>
 @endsection

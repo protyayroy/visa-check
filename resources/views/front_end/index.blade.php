@@ -2,6 +2,33 @@
 
 @section('content')
     <!-- ! Slider Starts -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner max-h-[200px] sm:max-h-[400px] md:max-h-[500px] lg:max-h-[600px] xl:max-h-[700px]">
+          <div class="carousel-item active">
+            <img src="{{ asset('file') }}/images/namibiavisaslideImage1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ asset('file') }}/images/namibiavisaslideImage2.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ asset('file') }}/images/namibiavisaslideImage3.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
 
     <!-- ! Slider Ends -->
 
@@ -9,8 +36,8 @@
 
     <div class="flex flex-col justify-center items-center my-20">
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-5/6 sm:w-4/6 md:w-1/2 xl:w-1/3">
-            <table class="w-full text-sm text-left text-gray-600 dark:text-gray-400">
-                <thead class="text-xs text-gray-800 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <table class="w-full text-sm text-left text-gray-600 ">
+                <thead class="text-xs text-gray-800 bg-gray-50">
                     <tr>
                         <th scope="col" class="px-6 py-3">
                             SERVICE TYPE
@@ -21,11 +48,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <tr class="bg-white border-b ">
                         <td class="px-6 py-4">Expedited service</td>
                         <td class="px-6 py-4">7 business days </td>
                     </tr>
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <tr class="bg-white border-b ">
                         <td class="px-6 py-4">Regular service </td>
                         <td class="px-6 py-4">15-20 business days </td>
                     </tr>
@@ -47,19 +74,17 @@
 
 
     <div class="w-full flex justify-center items-center my-20">
-        <div
-            class="w-full px-2 sm:px-0 sm:w-5/6 md:4/6 lg:w-3/6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <div class="h-[200px] overflow-hidden">
-                <img class="rounded-t-lg h-full w-full object-cover" src="{{ asset('file') }}/images/namibia3.jpg"
-                    alt="" />
+        <div class="w-full px-2 sm:px-0 sm:w-5/6 md:4/6 lg:w-3/6 bg-white border border-gray-200 rounded-lg shadow ">
+            <div class="h-[300px] overflow-hidden">
+                <img class="rounded-t-lg h-full w-full object-cover" src="{{ asset('file') }}/images/namibiavisanamibia3.jpg"
+                    alt="Namibia Visa" />
             </div>
             <div class="p-5">
                 <h5
-                    class="my-7 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-relaxed text-blue-700 font-bold tracking-tight dark:text-white">
+                    class="my-7 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-relaxed text-blue-700 font-bold tracking-tight ">
                     YOU ARE REQUIRED TO APPLY FOR A VISA, PLEASE SUBMIT THE FOLLOWING:
                 </h5>
-                <p
-                    class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-sm lg:text-base leading-8 tracking-wide space-y-4">
+                <p class="mb-3 font-normal text-gray-700  text-sm lg:text-base leading-8 tracking-wide space-y-4">
                     A duly filled and signed application form Valid passport with at
                     least 6 months validity from the date of entry and at least 3 or
                     more full blank pages Attach 2 colored 2” x 2” photographs, taken
@@ -96,8 +121,8 @@
 
     <div class="flex flex-col justify-center items-center">
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg px-2 sm:px-0 w-full sm:w-2/3 md:w-1/2">
-            <table class="w-full text-sm text-left text-gray-600 dark:text-gray-400">
-                <thead class="text-xs text-gray-800 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <table class="w-full text-sm text-left text-gray-600 ">
+                <thead class="text-xs text-gray-800 uppercase bg-gray-50 ">
                     <tr>
                         <th scope="col" class="px-3 sm:px-6 py-3">
                             VISA TYPE
@@ -111,27 +136,27 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <tr class="bg-white border-b ">
                         <td class="px-3 sm:px-6 py-4">Single Entry visa </td>
                         <td class="px-3 sm:px-6 py-4">Regular Service </td>
                         <td class="px-3 sm:px-6 py-4">$60.00</td>
                     </tr>
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <tr class="bg-white border-b ">
                         <td class="px-3 sm:px-6 py-4">Single Entry visa</td>
                         <td class="px-3 sm:px-6 py-4">Expedited Service </td>
                         <td class="px-3 sm:px-6 py-4">$100.00</td>
                     </tr>
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <tr class="bg-white border-b ">
                         <td class="px-3 sm:px-6 py-4">Multiple Entry visa </td>
                         <td class="px-3 sm:px-6 py-4">Regular Service </td>
                         <td class="px-3 sm:px-6 py-4">$200.00</td>
                     </tr>
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <tr class="bg-white border-b ">
                         <td class="px-3 sm:px-6 py-4">Multiple Entry visa</td>
                         <td class="px-3 sm:px-6 py-4">Expedited Service </td>
                         <td class="px-3 sm:px-6 py-4">$400.00 </td>
                     </tr>
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <tr class="bg-white border-b ">
                         <td class="px-3 sm:px-6 py-4">Emergency Entry visa </td>
                         <td class="px-3 sm:px-6 py-4">Regular Service </td>
                         <td class="px-3 sm:px-6 py-4">$400.00</td>
@@ -156,20 +181,20 @@
 
 
     <div
-        class="w-full flex flex-col lg:flex-row justify-center items-center lg:items-start space-y-4 lg:space-y-0 space-x-0 lg:space-x-4 px-2 sm:px-0 my-10">
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        class="w-full flex flex-col xl:flex-row justify-center items-center xl:items-start space-y-4 xl:space-y-0 space-x-0 xl:space-x-4 px-2 sm:px-0 my-10">
+        <div class="max-w-xl bg-white border border-gray-200 rounded-lg shadow ">
             <div class="h-[250px] overflow-hidden">
-                <img class="rounded-t-lg" src="{{ asset('file') }}/images/article2Image1.jpeg" alt="" />
+                <img class="rounded-t-lg" src="{{ asset('file') }}/images/namibiavisaarticle2Image1.jpeg" alt="Namibia Visa" />
             </div>
             <div class="p-5">
                 <a href="#">
-                    <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+                    <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 ">
                         Requirements for holders of Diplomatic, Official and
                         Laisser-Passer (United Nations, World Bank and International
                         Monetary Fund):
                     </h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-sm leading-5 tracking-wide space-y-4">
+                <p class="mb-3 font-normal text-gray-700  text-sm leading-5 tracking-wide space-y-4">
                 <p>
                     A duly filled and signed application form Valid passport with at
                     least 6 months validity from the date of entry and at least 3 or
@@ -201,17 +226,17 @@
                 </p>
             </div>
         </div>
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-xl bg-white border border-gray-200 rounded-lg shadow ">
             <div class="h-[250px] overflow-hidden">
-                <img class="rounded-t-lg" src="{{ asset('file') }}/images/article2Image2.jpg" alt="" />
+                <img class="rounded-t-lg" src="{{ asset('file') }}/images/namibiavisaarticle2Image2.jpg" alt="Namibia Visa" />
             </div>
             <div class="p-5">
                 <a href="#">
-                    <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+                    <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 ">
                         GENERAL INFORMATION ON REQUIRED VACCINES AND COVID-19 MEASURES:
                     </h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-sm leading-5 tracking-wide space-y-4">
+                <p class="mb-3 font-normal text-gray-700  text-sm leading-5 tracking-wide space-y-4">
                 <p>
                     COVID 19 Measures Summary for International Travelers The Yellow
                     Fever vaccination is required only if you travel to these
@@ -237,17 +262,17 @@
                 </p>
             </div>
         </div>
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-xl bg-white border border-gray-200 rounded-lg shadow ">
             <div class="h-[250px] overflow-hidden">
-                <img class="rounded-t-lg" src="{{ asset('file') }}/images/WorkPermit.jpg" alt="" />
+                <img class="rounded-t-lg" src="{{ asset('file') }}/images/namibiavisaWorkPermit.jpg" alt="Namibia Visa" />
             </div>
             <div class="p-5">
                 <a href="#">
-                    <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white uppercase">
+                    <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900  uppercase">
                         work permit citizenship
                     </h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-sm leading-5 tracking-wide space-y-4">
+                <p class="mb-3 font-normal text-gray-700  text-sm leading-5 tracking-wide space-y-4">
                 <p>
                     Requirements for the Temporary Work or Study Permit All
                     applicants must submit the following:
@@ -299,19 +324,17 @@
 
 
     <div class="w-full flex justify-center items-center my-20">
-        <div
-            class="w-full px-2 sm:px-0 sm:w-5/6 md:4/6 lg:w-3/6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="w-full px-2 sm:px-0 sm:w-5/6 md:4/6 lg:w-3/6 bg-white border border-gray-200 rounded-lg shadow ">
             <div class="h-[300px] overflow-hidden">
-                <img class="rounded-t-lg h-full w-full object-cover" src="{{ asset('file') }}/images/Citizenship.jpg"
-                    alt="" />
+                <img class="rounded-t-lg h-full w-full object-cover" src="{{ asset('file') }}/images/namibiavisaCitizenship.jpg"
+                    alt="Namibia Visa" />
             </div>
             <div class="p-5">
                 <h5
-                    class="my-7 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-relaxed text-blue-700 font-bold tracking-tight dark:text-white uppercase w-full text-center">
+                    class="my-7 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-relaxed text-blue-700 font-bold tracking-tight  uppercase w-full text-center">
                     Namibia citizenship
                 </h5>
-                <p
-                    class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-sm lg:text-base leading-8 tracking-wide space-y-4">
+                <p class="mb-3 font-normal text-gray-700  text-sm lg:text-base leading-8 tracking-wide space-y-4">
                 <p>
                     Who are allowed to hold Dual Namibian Citizenship? Dual
                     Citizenship for Namibia [PDF]
@@ -390,3 +413,4 @@
 
     <!-- ! Namibia Citizenship Article Ends -->
 @endsection
+
