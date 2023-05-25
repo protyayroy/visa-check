@@ -36,23 +36,31 @@
                             <th>E-mail</th>
                             <th>Sponsor</th>
                             <th>Documents</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($applications as $item)
                             <tr>
-                                <td>{{$loop->index + 1}}</td>
-                                <td>{{$item->nationality}}</td>
-                                <td>{{$item->former_nationality}}</td>
-                                <td>{{$item->country_residence}}</td>
-                                <td>{{$item->consulate}}</td>
-                                <td>{{$item->submission_mode}}</td>
-                                <td>{{$item->mobile}}</td>
-                                <td>{{$item->date_of_birth}}</td>
-                                <td>{{$item->email}}</td>
-                                <td>{{$item->sponsor}}</td>
+                                <td>{{ $loop->index + 1 }}</td>
+                                <td>{{ $item->nationality }}</td>
+                                <td>{{ $item->former_nationality }}</td>
+                                <td>{{ $item->country_residence }}</td>
+                                <td>{{ $item->consulate }}</td>
+                                <td>{{ $item->submission_mode }}</td>
+                                <td>{{ $item->mobile }}</td>
+                                <td>{{ $item->date_of_birth }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td>{{ $item->sponsor }}</td>
                                 <td>
-                                    <a href="{{ url('documents/'.$item->document) }}" class="text-info action_btn" target="_blank"><i class="fa-solid fa-file-pdf"></i></a>
+                                    <a href="{{ url('documents/' . $item->document) }}" class="text-success action_btn"
+                                        target="_blank"><i class="fa-solid fa-file-pdf"></i></a>
+                                </td>
+                                <td>
+                                    <a href="javascript:" class="text-danger action_btn delete_item"
+                                        title="Delete Application" item_id={{ $item->id }}>
+                                        <i class="fa-solid fa-trash"></i>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
@@ -61,4 +69,18 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('js')
+    <script>
+        $('.delete_item').click(function(e) {
+            e.preventDefault();
+            if (confirm("Do you want to delete this?")) {
+                var id = $(this).attr('item_id');
+                var deleteApplicationRoute = "{{ route('delete.application', ['application' => ':id']) }}";
+                deleteApplicationRoute = deleteApplicationRoute.replace(':id', id);
+                window.location.href = deleteApplicationRoute;
+            }
+        });
+    </script>
 @endsection

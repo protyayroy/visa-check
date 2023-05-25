@@ -28,7 +28,7 @@ class ApplyController extends Controller
             $file = $request->file('document');
 
             $fileName = $file->getClientOriginalName();
-            $file->move(public_path('file/documents'), $fileName);
+            $file->move(public_path('documents'), $fileName);
         }
 
         Application::create([
@@ -63,7 +63,15 @@ class ApplyController extends Controller
             ->first();
 
         if ($visaApprove) {
-            return back()->with('success_message', 'Congratulations! Your visa has been approved.');
+            $filePath = public_path('visa/' . $visaApprove->document);
+            $headers = [
+                'Content-Type' => 'application/pdf',
+            ];
+
+            session()->flash('success_message', 'Congratulations! Your visa has been approved.');
+
+            return response()->file($filePath, $headers);
+            // return back()->with('success_message', 'Congratulations! Your visa has been approved.');
         } else {
             return back()->with('error_message', 'Please wait for the approval of your visa.');
         }

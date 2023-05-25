@@ -31,6 +31,7 @@
                             <th>Passport Number</th>
                             <th>Confirmation Number</th>
                             <th>Nationality</th>
+                            <th>Document</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -43,6 +44,9 @@
                                 <td>{{ $item->passport_number }}</td>
                                 <td>{{ $item->confirmation_number }}</td>
                                 <td>{{ $item->nationality }}</td>
+                                <td>
+                                    <a href="{{ url('visa/'.$item->document) }}" class="text-success action_btn" target="_blank"><i class="fa-solid fa-file-pdf"></i></a>
+                                </td>
                                 <td>
                                     <a href="{{ route('show.approval', $item->id) }}" class="action_btn text-info"
                                         title="Edit Approval">

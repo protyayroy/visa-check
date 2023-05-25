@@ -1,3 +1,6 @@
+@php
+    $active = 'apply';
+@endphp
 @extends('front_end.layouts.main')
 
 @section('content')

@@ -1,3 +1,6 @@
+@php
+    $active = 'education';
+@endphp
 @extends('front_end.layouts.main')
 
 @section('content')
@@ -7,7 +10,7 @@
         <div
             class="w-full px-2 sm:px-0 sm:w-5/6 md:4/6 lg:w-3/6 bg-white border border-gray-200 rounded-lg shadow">
             <div class="h-[420px] overflow-hidden">
-                <img class="rounded-t-lg h-full w-full object-cover" src="{{ asset('file') }}/images/namibiavisaeducation.jpg" alt="Namibia Visa" />
+                <img class="h-full w-full object-cover" src="{{ asset('file') }}/images/namibia-visa-education.jpg" alt="namibia-visa-education.jpg" />
             </div>
             <div class="p-5">
                 <h5

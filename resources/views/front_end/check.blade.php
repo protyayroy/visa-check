@@ -1,27 +1,32 @@
+@php
+    $active = 'check';
+@endphp
 @extends('front_end.layouts.main')
 
 @section('content')
     <!-- ! Check Info Form Starts -->
-    @if (Session::has('success_message'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Success:</strong> {{ Session('success_message') }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
-    @if (Session::has('error_message'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Error:</strong> {{ Session('error_message') }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
     <form class="w-full flex flex-col justify-center items-center px-5 md:px-0" action="{{ route('check.visa') }}"
         method="GET">
         @csrf
-        <div class="w-full md:w-[640px] lg:w-[768px] xl:w-[1024px] 2xl:w-[1280px] border px-8 shadow-lg py-10 rounded-lg mt-10">
+        <div
+            class="w-full md:w-[640px] lg:w-[768px] xl:w-[1024px] 2xl:w-[1280px] border px-8 shadow-lg py-10 rounded-lg mt-10">
+
+            @if (Session::has('success_message'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Success:</strong> {{ Session('success_message') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+            @if (Session::has('error_message'))
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Warning:</strong> {{ Session('error_message') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
             <div class="w-full mb-10">
                 <h2 class="text-center text-2xl font-bold tracking-wide underline underline-offset-8">
                     Check Visa Status
@@ -64,7 +69,7 @@
                     <label for="confirmation_number" class="block mb-2 text-sm font-medium text-gray-900 ">
                         Confirmation Number
                     </label>
-                    <input type="number" id="confirmation_number" name="confirmation_number"
+                    <input type="text" id="confirmation_number" name="confirmation_number"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                         placeholder="Enter Confirmation Number" required />
                 </div>

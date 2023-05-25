@@ -34,6 +34,8 @@ Route::prefix('admin')->group(function () {
 
         Route::get('/visa-application', [AdminController::class, 'application'])->name('application');
 
+        Route::get('delete-application/{application}', [AdminController::class, 'distroyApplication'])->name('delete.application');
+
         Route::get('visa-approve-list', [AdminController::class, 'approveList'])->name('approve.list');
 
         Route::view('add-approval', 'admin.application.add_approval')->name('create.approval');

@@ -3,7 +3,7 @@
         class="container px-5 py-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div class="w-64 flex flex-col items-center md:mx-0 mx-auto text-center md:text-left space-y-3 mb-5">
             <div>
-                <img class="w-20" src="{{ asset('file') }}/images/namibiavisalogo.png" alt="Namibia Visa" />
+                <img class="w-20" src="{{ asset('file') }}/images/namibia-visa-goverment.png" alt="Namibia Visa" />
             </div>
             <div class="uppercase text-3xl font-bold">
                 <span class="text-blue-600">Namibia</span>
@@ -156,7 +156,7 @@
             <p class="text-gray-500 text-sm text-center sm:text-left">
                 © Copyright 2015 Reserved by Namibia Visa
             </p>
-            <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+            {{-- <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
                 <h2>
                     Design and developed by
                     <a className="hover:underline hover:text-blue-500 underline-offset-2" target="_blank"
@@ -164,7 +164,7 @@
                         SOFTTECH-IT
                     </a>
                 </h2>
-            </span>
+            </span> --}}
         </div>
     </div>
 </footer>

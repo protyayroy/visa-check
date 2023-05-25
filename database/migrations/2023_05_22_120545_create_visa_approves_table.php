@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('confirmation_number');
             $table->string('date_of_birth');
             $table->string('nationality');
+            $table->string('document')->nullable();
             $table->timestamps();
         });
     }

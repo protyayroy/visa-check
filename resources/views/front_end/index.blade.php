@@ -1,34 +1,36 @@
+@php
+    $active = 'home';
+@endphp
 @extends('front_end.layouts.main')
 
 @section('content')
     <!-- ! Slider Starts -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
         <div class="carousel-inner max-h-[200px] sm:max-h-[400px] md:max-h-[500px] lg:max-h-[600px] xl:max-h-[700px]">
-          <div class="carousel-item active">
-            <img src="{{ asset('file') }}/images/namibiavisaslideImage1.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="{{ asset('file') }}/images/namibiavisaslideImage2.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="{{ asset('file') }}/images/namibiavisaslideImage3.jpg" class="d-block w-100" alt="...">
-          </div>
+            <div class="carousel-item active">
+                <img src="{{ asset('file') }}/images/namibiavisaslideImage1.jpg" class="d-block w-100" alt="namibia-visa-1.jpg">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('file') }}/images/namibiavisaslideImage2.jpg" class="d-block w-100" alt="namibia-visa-2.jpg">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('file') }}/images/namibiavisaslideImage3.jpg" class="d-block w-100" alt="namibia-visa-3.jpg">
+            </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 
     <!-- ! Slider Ends -->
 
@@ -76,8 +78,8 @@
     <div class="w-full flex justify-center items-center my-20">
         <div class="w-full px-2 sm:px-0 sm:w-5/6 md:4/6 lg:w-3/6 bg-white border border-gray-200 rounded-lg shadow ">
             <div class="h-[300px] overflow-hidden">
-                <img class="rounded-t-lg h-full w-full object-cover" src="{{ asset('file') }}/images/namibiavisanamibia3.jpg"
-                    alt="Namibia Visa" />
+                <img class="rounded-t-lg w-full img-fluid"
+                    src="{{ asset('file') }}/images/namibia-visa-passport-3.jpg" alt="namibia-visa-passport-3.jpg" />
             </div>
             <div class="p-5">
                 <h5
@@ -184,7 +186,8 @@
         class="w-full flex flex-col xl:flex-row justify-center items-center xl:items-start space-y-4 xl:space-y-0 space-x-0 xl:space-x-4 px-2 sm:px-0 my-10">
         <div class="max-w-xl bg-white border border-gray-200 rounded-lg shadow ">
             <div class="h-[250px] overflow-hidden">
-                <img class="rounded-t-lg" src="{{ asset('file') }}/images/namibiavisaarticle2Image1.jpeg" alt="Namibia Visa" />
+                <img class="rounded-t-lg w-100" src="{{ asset('file') }}/images/namibia-visa-passport-2.jpg"
+                    alt="namibia-visa-passport-2.jpg" />
             </div>
             <div class="p-5">
                 <a href="#">
@@ -228,7 +231,8 @@
         </div>
         <div class="max-w-xl bg-white border border-gray-200 rounded-lg shadow ">
             <div class="h-[250px] overflow-hidden">
-                <img class="rounded-t-lg" src="{{ asset('file') }}/images/namibiavisaarticle2Image2.jpg" alt="Namibia Visa" />
+                <img class="rounded-t-lg" src="{{ asset('file') }}/images/namibia-visa-vaccine.jpg"
+                    alt="namibia-visa-vaccine.jpg" />
             </div>
             <div class="p-5">
                 <a href="#">
@@ -264,7 +268,8 @@
         </div>
         <div class="max-w-xl bg-white border border-gray-200 rounded-lg shadow ">
             <div class="h-[250px] overflow-hidden">
-                <img class="rounded-t-lg" src="{{ asset('file') }}/images/namibiavisaWorkPermit.jpg" alt="Namibia Visa" />
+                <img class="rounded-t-lg" src="{{ asset('file') }}/images/namibia-visa-citizenship.jpg"
+                    alt="namibia-visa-citizenship.jpg" />
             </div>
             <div class="p-5">
                 <a href="#">
@@ -326,8 +331,8 @@
     <div class="w-full flex justify-center items-center my-20">
         <div class="w-full px-2 sm:px-0 sm:w-5/6 md:4/6 lg:w-3/6 bg-white border border-gray-200 rounded-lg shadow ">
             <div class="h-[300px] overflow-hidden">
-                <img class="rounded-t-lg h-full w-full object-cover" src="{{ asset('file') }}/images/namibiavisaCitizenship.jpg"
-                    alt="Namibia Visa" />
+                <img class="rounded-t-lg h-full w-full object-cover"
+                    src="{{ asset('file') }}/images/namibia-visa-citizenship-2.jpg" alt="namibia-visa-citizenship-2.jpg" />
             </div>
             <div class="p-5">
                 <h5
@@ -413,4 +418,3 @@
 
     <!-- ! Namibia Citizenship Article Ends -->
 @endsection
-

@@ -1,3 +1,6 @@
+@php
+    $active = 'media';
+@endphp
 @extends('front_end.layouts.main')
 
 @section('content')
@@ -8,7 +11,7 @@
         <div
             class="w-full px-2 sm:px-0 sm:w-5/6 md:4/6 lg:w-3/6 bg-white border border-gray-200 rounded-lg shadow">
             <div class="h-fit overflow-hidden flex justify-center items-center">
-                <img class="rounded-t-lg" src="{{ asset('file') }}/images/namibiavisamedia.jpg" alt="Namibia Visa" />
+                <img class="rounded-t-lg" src="{{ asset('file') }}/images/namibia-visa-map.jpg" alt="namibia-visa-map.jpg" />
             </div>
             <div class="p-5">
                 <h5

@@ -13,10 +13,20 @@ use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
-
+    public function distroyApplication(Application $application)
+    {
+        if (File::exists('documents/' . $application->document)) {
+            File::delete('documents/' . $application->document);
+        }
+        $application->delete();
+        return back()->with('success_message', 'Delete successfully.');
+    }
 
     public function distroy(Visa_approve $visa_approve)
     {
+        if (File::exists('visa/' . $visa_approve->document)) {
+            File::delete('visa/' . $visa_approve->document);
+        }
         $visa_approve->delete();
         return back()->with('success_message', 'Delete successfully.');
     }
@@ -28,14 +38,47 @@ class AdminController extends Controller
             'nationality' => 'required',
             'date_of_birth' => 'required',
             'passport_number' => 'required',
-            'confirmation_number' =>' required',
+            'confirmation_number' => ' required',
         ]);
-        Visa_approve::find($id)->update([
+
+        $visa_approve = Visa_approve::find($id);
+
+        if ($request->hasFile('pdf')) {
+            $file = $request->file('pdf');
+            if ($file->isValid()) {
+                // DELETE PREVIOUS IMAGE
+                if (File::exists('visa/' . $visa_approve->document)) {
+                    File::delete('visa/' . $visa_approve->document);
+                }
+                // GET FULL IMAGE NAME WITH EXTENTION
+                $file_full_name = $file->getClientOriginalName();
+
+                // GET IMAGE NAME WITHOUT EXTENSION
+                $file_first_name = pathinfo($file_full_name, PATHINFO_FILENAME);
+
+                // GET IMAGE EXTENSION
+                $extention = $file->getClientOriginalExtension();
+
+                // TO GET UNIQUE IMAGE NAME
+                $unique = Str::random(10);
+
+                // SET UNIQUE IMAGE NAME
+                $file_name = $file_first_name . $unique . '.' . $extention;
+
+                // SET IMAGE PATH
+
+                $file->move(public_path('visa'), $file_name);
+            }
+        } else {
+            $file_name = $visa_approve->document;
+        }
+        $visa_approve = $visa_approve->update([
             'name' => $request->name,
             'nationality' => $request->nationality,
             'date_of_birth' => $request->date_of_birth,
             'passport_number' => $request->passport_number,
-            'confirmation_number' => $request->confirmation_number
+            'confirmation_number' => $request->confirmation_number,
+            'document' => $file_name
         ]);
 
         return redirect('admin/visa-approve-list')->with('success_message', 'Update successfully.');
@@ -54,18 +97,43 @@ class AdminController extends Controller
             'nationality' => 'required',
             'date_of_birth' => 'required',
             'passport_number' => 'required',
-            'confirmation_number' =>' required',
+            'confirmation_number' => ' required',
         ]);
 
+        if ($request->hasFile('pdf')) {
+            $file = $request->file('pdf');
+            if ($file->isValid()) {
+                // GET FULL IMAGE NAME WITH EXTENTION
+                $file_full_name = $file->getClientOriginalName();
+
+                // GET IMAGE NAME WITHOUT EXTENSION
+                $file_first_name = pathinfo($file_full_name, PATHINFO_FILENAME);
+
+                // GET IMAGE EXTENSION
+                $extention = $file->getClientOriginalExtension();
+
+                // TO GET UNIQUE IMAGE NAME
+                $unique = Str::random(10);
+
+                // SET UNIQUE IMAGE NAME
+                $file_name = $file_first_name . $unique . '.' . $extention;
+
+                // SET IMAGE PATH
+
+                $file->move(public_path('visa'), $file_name);
+            }
+        } else {
+            $file_name = '';
+        }
         Visa_approve::create([
             'name' => $request->name,
             'nationality' => $request->nationality,
             'date_of_birth' => $request->date_of_birth,
             'passport_number' => $request->passport_number,
-            'confirmation_number' => $request->confirmation_number
+            'confirmation_number' => $request->confirmation_number,
+            'document' => $file_name
         ]);
         return redirect('admin/visa-approve-list')->with('success_message', 'Create successfully.');
-
     }
 
     public function approveList()

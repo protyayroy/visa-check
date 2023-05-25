@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="{{ asset('backend') }}/css/vertical-layout-light/style.css">
 
     <link rel="stylesheet" href="{{ asset('backend') }}/custom.css">
-    <link rel="shortcut icon" href="{{ asset('backend') }}/images/favicon.png" />
+
+    <link rel="shortcut icon" href="{{ asset('logo.png') }}" />
 </head>
 
 <body>

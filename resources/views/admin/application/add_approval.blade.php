@@ -24,7 +24,7 @@
                 @endif
             </div>
 
-            <form action="{{ route('store.approval') }}" method="POST">
+            <form action="{{ route('store.approval') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="name">Name:</label>
@@ -61,6 +61,14 @@
                     <input type="text" class="form-control" id="confirmation_number" name="confirmation_number"
                         placeholder="Enter Confirmation Number">
                     @error('confirmation_number')
+                        <small class="text-danger">{{ $message }}*</small>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="pdf">Send PDF:</label>
+                    <input type="file" class="form-control" id="pdf" name="pdf"
+                        placeholder="Enter Confirmation Number">
+                    @error('pdf')
                         <small class="text-danger">{{ $message }}*</small>
                     @enderror
                 </div>

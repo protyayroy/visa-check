@@ -1,3 +1,6 @@
+@php
+    $active = 'government';
+@endphp
 @extends('front_end.layouts.main')
 
 @section('content')
@@ -7,7 +10,7 @@
         <div
             class="w-full px-2 sm:px-0 sm:w-5/6 md:4/6 lg:w-3/6 bg-white border border-gray-200 rounded-lg shadow ">
             <div class="h-[420px] overflow-hidden">
-                <img class="rounded-t-lg h-full w-full object-cover" src="{{ asset('file') }}/images/namibiavisanamibiagov.png" alt="namibia visa" />
+                <img class="img-fluid" src="{{ asset('file') }}/images/namibia-visa-goverment.png" alt="namibia-visa-goverment.png" />
             </div>
             <div class="p-5">
 
