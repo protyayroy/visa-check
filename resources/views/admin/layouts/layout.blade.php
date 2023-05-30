@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{ asset('backend') }}/vendors/ti-icons/css/themify-icons.css">
     <link rel="stylesheet" href="{{ asset('backend') }}/css/vertical-layout-light/style.css">
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+
     <link rel="stylesheet" href="{{ asset('backend') }}/custom.css">
 
     <link rel="shortcut icon" href="{{ asset('logo.png') }}" />
@@ -49,8 +51,9 @@
     <script src="{{ asset('backend') }}/js/dashboard.js"></script>
     <script src="{{ asset('backend') }}/js/Chart.roundedBarCharts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="{{ asset('backend') }}/js/jquery-3.6.3.min.js"></script>
-    {{-- <script src="{{ asset('backend') }}/js/bootstrap.min.js"></script> --}}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap4.min.js"></script>
 
@@ -58,6 +61,13 @@
         $(document).ready(function() {
             $('#bootstrap_datatable').DataTable({
                 scrollX: true,
+            });
+
+            $("#datepicker").datepicker({
+                dateFormat: "yy-mm-dd",
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "-100:+10",
             });
         });
     </script>

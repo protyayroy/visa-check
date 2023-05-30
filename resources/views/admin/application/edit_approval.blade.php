@@ -43,8 +43,10 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="date_of_birth">Date Of Birth:</label>
-                    <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" value="{{ $visa_approve->date_of_birth }}">
+                    <label for="datepicker">Date Of Birth:  <small>(year-month-day)</small></label>
+                    <input type="text" id="datepicker" name="date_of_birth"
+                        class="form-control"  value="{{ date('Y-m-d') }}"
+                        required />
                     @error('date_of_birth')
                         <small class="text-danger">{{ $message }}*</small>
                     @enderror

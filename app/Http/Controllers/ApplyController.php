@@ -18,10 +18,10 @@ class ApplyController extends Controller
             'consulate' => 'required',
             'submission_mode' => 'required',
             'mobile' => 'required|numeric',
-            'date_of_birth' => 'required',
+            'date_of_birth' => 'required|date_format:Y-m-d',
             'email' => 'required|email|same:re_email',
             'sponsor' => 'required',
-            'document' => 'required|mimes:pdf',
+            'document' => 'required|mimes:pdf|max:5000',
         ]);
 
         if ($request->hasFile('document')) {

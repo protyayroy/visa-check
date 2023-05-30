@@ -29,9 +29,12 @@
                     <label for="nationality" class="block mb-2 text-sm font-medium text-gray-900 ">
                         Nationality
                     </label>
-                    <input value="{{ old('nationality') }}" type="text" id="nationality" name="nationality"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                        placeholder="Nationality" required />
+                    <select name="nationality" id="nationality" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                            <option value="" disabled selected>Select Nationality</option>
+                            @foreach (DB::table('country')->get() as $country)
+                                <option value="{{ $country->nicename }}">{{ $country->nicename }}</option>
+                            @endforeach
+                        </select>
                     @error('nationality')
                         <small class="text-danger">{{ $message }}*</small>
                     @enderror
@@ -40,9 +43,12 @@
                     <label for="country_of_residence" class="block mb-2 text-sm font-medium text-gray-900 ">
                         Country of Residence
                     </label>
-                    <input value="{{ old('country_residence') }}"  type="text" id="country_of_residence" name="country_residence"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                        placeholder="Country of Residence" required />
+                    <select name="country_residence" id="country_of_residence" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                            <option value="" disabled selected>Select Country of Residence</option>
+                            @foreach (DB::table('country')->get() as $country)
+                                <option value="{{ $country->nicename }}">{{ $country->nicename }}</option>
+                            @endforeach
+                        </select>
                     @error('country_residence')
                         <small class="text-danger">{{ $message }}*</small>
                     @enderror
@@ -51,9 +57,12 @@
                     <label for="former_nationality" class="block mb-2 text-sm font-medium text-gray-900 ">
                         Former Nationality
                     </label>
-                    <input value="{{ old('former_nationality') }}"  type="text" id="former_nationality" name="former_nationality"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                        placeholder="Former Nationality" required />
+                    <select name="former_nationality" id="former_nationality" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                            <option value="" disabled selected>Select Former Nationality</option>
+                            @foreach (DB::table('country')->get() as $country)
+                                <option value="{{ $country->nicename }}">{{ $country->nicename }}</option>
+                            @endforeach
+                        </select>
                     @error('former_nationality')
                         <small class="text-danger">{{ $message }}*</small>
                     @enderror
@@ -123,12 +132,12 @@
                 </div>
             </div>
             <div class="mb-6">
-                <label for="date_of_birth" class="block mb-2 text-sm font-medium text-gray-900 ">
-                    Date of Birth
+                <label for="datepicker" class="block mb-2 text-sm font-medium text-gray-900 ">
+                    Date of Birth  <small>(year-month-date)</small>
                 </label>
-                <input value="{{ old('date_of_birth') }}"  type="date" id="date_of_birth" name="date_of_birth"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                    placeholder="Date of Birth" required />
+                <input type="text" id="datepicker" name="date_of_birth"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "  value="{{ date('Y-m-d') }}"
+                        required />
                 @error('date_of_birth')
                     <small class="text-danger">{{ $message }}*</small>
                 @enderror
@@ -177,7 +186,7 @@
                     <small class="text-danger">{{ $message }}*</small>
                 @enderror
             </div>
-            <button onclick="alerts()" id="alertButton" type="submit"
+            <button id="alertButton" type="submit"
                 class="text-white  bg-blue-700 hover:bg-blue-800 font-medium rounded-md text-base w-full sm:w-auto px-20 py-2 mt-10 text-center">
                 Submit
             </button>
@@ -186,14 +195,3 @@
 
     <!-- ! Apply Form Ends -->
 @endsection
-
-<script>
-    const alerts = () => {
-        Swal.fire({
-            title: 'Success!',
-            text: 'SweetAlert2 is working!',
-            icon: 'success',
-            confirmButtonText: 'OK'
-        });
-    }
-</script>

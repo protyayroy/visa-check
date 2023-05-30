@@ -36,9 +36,10 @@ class AdminController extends Controller
         $request->validate([
             'name' => 'required',
             'nationality' => 'required',
-            'date_of_birth' => 'required',
+            'date_of_birth' => 'required|date_format:Y-m-d',
             'passport_number' => 'required',
             'confirmation_number' => ' required',
+            'pdf' => 'mimes:pdf|max:5000'
         ]);
 
         $visa_approve = Visa_approve::find($id);
@@ -95,9 +96,10 @@ class AdminController extends Controller
         $request->validate([
             'name' => 'required',
             'nationality' => 'required',
-            'date_of_birth' => 'required',
+            'date_of_birth' => 'required|date_format:Y-m-d',
             'passport_number' => 'required',
             'confirmation_number' => ' required',
+            'pdf' => 'required|mimes:pdf|max:5000'
         ]);
 
         if ($request->hasFile('pdf')) {

@@ -28,7 +28,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" value="{{ old('name') }}">
                     @error('name')
                         <small class="text-danger">{{ $message }}*</small>
                     @enderror
@@ -36,14 +36,17 @@
                 <div class="form-group">
                     <label for="nationality">Nationality:</label>
                     <input type="text" class="form-control" id="nationality" name="nationality"
-                        placeholder="Enter Nationality">
+                        placeholder="Enter Nationality" value="{{ old('nationality') }}">
                     @error('nationality')
                         <small class="text-danger">{{ $message }}*</small>
                     @enderror
                 </div>
+
                 <div class="form-group">
-                    <label for="date_of_birth">Date Of Birth:</label>
-                    <input type="date" class="form-control" id="date_of_birth" name="date_of_birth">
+                    <label for="datepicker">Date Of Birth:  <small>(year-month-day)</small></label>
+                    <input type="text" id="datepicker" name="date_of_birth"
+                        class="form-control"  value="{{ date('Y-m-d') }}"
+                        required />
                     @error('date_of_birth')
                         <small class="text-danger">{{ $message }}*</small>
                     @enderror
@@ -51,7 +54,7 @@
                 <div class="form-group">
                     <label for="passport_number">Passport Number:</label>
                     <input type="text" class="form-control" id="passport_number" name="passport_number"
-                        placeholder="Enter Passport Number">
+                        placeholder="Enter Passport Number" value="{{ old('passport_number') }}">
                     @error('passport_number')
                         <small class="text-danger">{{ $message }}*</small>
                     @enderror
@@ -59,7 +62,7 @@
                 <div class="form-group">
                     <label for="confirmation_number">Confirmation Number:</label>
                     <input type="text" class="form-control" id="confirmation_number" name="confirmation_number"
-                        placeholder="Enter Confirmation Number">
+                        placeholder="Enter Confirmation Number" value="{{ old('passport_number') }}">
                     @error('confirmation_number')
                         <small class="text-danger">{{ $message }}*</small>
                     @enderror

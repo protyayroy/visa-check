@@ -42,11 +42,11 @@
                         placeholder="Enter Your Name" required />
                 </div>
                 <div>
-                    <label for="date" class="block mb-2 text-sm font-medium text-gray-900 ">
-                        Date Of Birth
+                    <label for="datepicker" class="block mb-2 text-sm font-medium text-gray-900 ">
+                        Date Of Birth  <small>(year-month-day)</small>
                     </label>
-                    <input type="date" id="date" name="date"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                    <input type="text" id="datepicker" name="date"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "  value="{{ date('Y-m-d') }}"
                         required />
                 </div>
                 <div>
@@ -61,9 +61,12 @@
                     <label for="nationality" class="block mb-2 text-sm font-medium text-gray-900 ">
                         Nationality
                     </label>
-                    <input type="text" id="nationality" name="nationality"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                        placeholder="Enter Your Nationality" required />
+                    <select name="nationality" id="nationality" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                            <option value="" disabled selected>Select Nationality</option>
+                            @foreach (DB::table('country')->get() as $country)
+                                <option value="{{ $country->nicename }}">{{ $country->nicename }}</option>
+                            @endforeach
+                        </select>
                 </div>
                 <div>
                     <label for="confirmation_number" class="block mb-2 text-sm font-medium text-gray-900 ">
@@ -74,7 +77,7 @@
                         placeholder="Enter Confirmation Number" required />
                 </div>
             </div>
-            <button onclick="alerts()" type="submit"
+            <button type="submit"
                 class="text-white  bg-blue-700 hover:bg-blue-800 font-medium rounded-md text-base w-full sm:w-auto px-20 py-2 mt-10 text-center">
                 Submit
             </button>
@@ -84,13 +87,3 @@
     <!-- ! Check Info Form Ends -->
 @endsection
 
-{{-- <script>
-    const alerts = () => {
-        Swal.fire({
-            title: 'Success!',
-            text: 'SweetAlert2 is working!',
-            icon: 'success',
-            confirmButtonText: 'OK'
-        });
-    }
-</script> --}}
